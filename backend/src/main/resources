@@ -1,0 +1,33 @@
+# DevTools Configuration
+spring.devtools.restart.enabled=true
+spring.devtools.livereload.enabled=true
+spring.devtools.restart.poll-interval=2s
+spring.devtools.restart.quiet-period=1s
+
+# MongoDB Configuration
+spring.data.mongodb.uri=mongodb+srv://admin:admin@mock-ai-interview-app.5b1crbm.mongodb.net/ai_interview_app?retryWrites=true&w=majority&serverSelectionTimeoutMS=5000
+spring.data.mongodb.database=ai_interview_app
+
+# Server Configuration
+server.port=8080
+
+# JWT Configuration
+# jwt.secret=qNRL5vbbao1sZQYhXL6H33Bn6OVvZ3aVpaIgbYrnG0vClzNj1qOQLaM4uqlT2BKa5Wjio5AsgDeUpDUyJhSQ6g==
+jwt.secret=${JWT_SECRET}
+
+# GitHub Models API Configuration
+# github.models.endpoint=https://models.github.ai/inference
+# github.models.model=openai/gpt-4o-mini
+# github.models.token=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
+
+
+# azure.openai.endpoint=${AZURE_OPENAI_ENDPOINT:}
+# azure.openai.deployment=${AZURE_OPENAI_DEPLOYMENT:}
+# azure.openai.api.key=${AZURE_OPENAI_API_KEY:}
+# azure.openai.api.version=${AZURE_OPENAI_API_VERSION:}
+# openai.api.key=${OPENAI_API_KEY:} 
+
+# Gemini API Configuration
+# gemini.api.key=AIzaSyCquXTYpmni8xRVC6bZR8oCA8yWzuvxXpI
+gemini.api.key=${GEMINI_API_KEY}
+gemini.api.model=gemini-2.5-flash
