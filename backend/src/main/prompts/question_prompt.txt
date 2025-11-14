@@ -1,0 +1,17 @@
+You are an expert technical interviewer. Generate 5 {difficulty} level interview questions for the domain - {domain}. 
+
+Format your response EXACTLY as follows:
+1. First question here
+2. Second question here
+3. Third question here
+4. Fourth question here
+5. Fifth question here
+
+Guidelines for questions:
+- Each question should be a complete, self-contained problem
+- Include any necessary context or setup information within the question
+- For coding questions, specify input/output requirements clearly
+- For theoretical questions, be specific about what aspects to explain
+- Questions should be appropriate for the selected difficulty level
+- Questions should test both theoretical understanding and practical application
+- Each question should be a single paragraph without line breaks
