@@ -1,0 +1,428 @@
+@import '../variables.scss';
+
+
+// Hero section
+.heroSection {
+  .container {
+    padding: 6rem 1.5rem;
+  }
+
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  .heroText {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      width: 50%;
+      text-align: left;
+      margin-bottom: 0;
+    }
+
+    .heroTitle {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+
+      @media (min-width: 768px) {
+        font-size: 3.75rem;
+      }
+
+      .highlight {
+        color: $primary-color;
+      }
+    }
+
+    .heroDescription {
+      font-size: 1.25rem;
+      color: $text-secondary;
+      margin-bottom: 2rem;
+    }
+
+    .heroButtons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      @media (min-width: 768px) {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .heroImage {
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    display: flex;
+    justify-content: center;
+
+    .heroIllustration {
+      width: 100%;
+      max-width: 28rem;
+    }
+  }
+}
+
+// Button styles
+.buttonPrimary {
+  background: $primary-color;
+  color: $white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 1.125rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background: $primary-hover;
+  }
+}
+
+.buttonSecondary {
+  background: $white;
+  color: $primary-color;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 1.125rem;
+  border: 1px solid $primary-color;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background: $gray-100;
+  }
+}
+
+// Features section
+.featuresSection {
+  padding: 6rem 10rem;
+  background: $white;
+
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.125rem;
+    color: $text-secondary;
+  }
+
+  .featuresGrid {
+    display: grid;
+    gap: 3rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .featureCard {
+    background: $gray-50;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-0.625rem);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .featureIcon {
+      border-radius: 50%;
+      height: 4rem;
+      width: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+
+      .materialIcons {
+        font-size: 2.5rem;
+      }
+
+      &.blue {
+        background: $blue-bg;
+        color: $blue-text;
+      }
+
+      &.orange {
+        background: $orange-bg;
+        color: $orange-text;
+      }
+
+      &.teal {
+        background: $teal-bg;
+        color: $teal-text;
+      }
+
+      &.purple {
+        background: $purple-bg;
+        color: $purple-text;
+      }
+
+      &.red {
+        background: $red-bg;
+        color: $red-text;
+      }
+
+      &.green {
+        background: $green-bg;
+        color: $green-text;
+      }
+    }
+
+    .featureTitle {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .featureDescription {
+      color: $text-secondary;
+      text-align: center;
+    }
+  }
+}
+
+// How it works section
+.howItWorksSection {
+  padding: 6rem 0;
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .stepsContainer {
+    position: relative;
+
+    .stepsLine {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 0.25rem;
+      background: #bfdbfe;
+      transform: translateY(-50%);
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    .stepsGrid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      position: relative;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 0;
+      }
+
+      .step {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        @media (min-width: 768px) {
+          width: 33.333%;
+          margin-bottom: 0;
+        }
+
+        .stepNumber {
+          background: $white;
+          border: 4px solid $primary-color;
+          border-radius: 50%;
+          height: 6rem;
+          width: 6rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1rem;
+          position: relative;
+          z-index: 10;
+
+          span {
+            color: $primary-color;
+            font-size: 2.5rem;
+            font-weight: 700;
+          }
+        }
+
+        .stepTitle {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        .stepDescription {
+          color: $text-secondary;
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+// Testimonials section
+.testimonialsSection {
+  padding: 6rem 10rem;
+  background: $white;
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .testimonialsGrid {
+    display: grid;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .testimonialCard {
+    background: $gray-100;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+    .testimonialText {
+      color: $text-secondary;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .testimonialAuthor {
+      display: flex;
+      align-items: center;
+
+      .authorAvatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+
+      .authorInfo {
+        .authorName {
+          font-weight: 600;
+          color: $text-primary;
+          margin-bottom: 0.25rem;
+        }
+
+        .authorRole {
+          font-size: 0.875rem;
+          color: $text-muted;
+        }
+      }
+    }
+  }
+}
+
+// CTA section
+.ctaSection {
+  background: $primary-color;
+  color: $white;
+
+  .container {
+    padding: 5rem 1.5rem;
+  }
+
+  .ctaContent {
+    text-align: center;
+
+    .ctaTitle {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .ctaDescription {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .ctaButton {
+      background: $white;
+      color: $primary-color;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-size: 1.125rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background: $gray-100;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+  .heroSection .heroText .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem !important;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footerLinks {
+    grid-template-columns: 1fr !important;
+  }
+}

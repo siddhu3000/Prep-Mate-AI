@@ -1,0 +1,38 @@
+@import '../variables.scss';
+
+.container {
+  min-height: calc(100vh - 64px);
+  background-color: $gray-50;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, $primary-color, $primary-light);
+  color: $white;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+  .domainTitle {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .difficultyBadge {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.25rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    backdrop-filter: blur(4px);
+  }
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
