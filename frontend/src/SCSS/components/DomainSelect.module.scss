@@ -1,0 +1,109 @@
+@import '../variables.scss';
+
+// Local variables
+$spacing-base: 1rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$border-radius-base: 0.5rem;
+$font-size-base: 1rem;
+$shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: $spacing-lg;
+  background-color: $white;
+  border-radius: $border-radius-base;
+  box-shadow: $shadow-base;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.formGroup {
+  margin-bottom: $spacing-lg;
+
+  label {
+    display: block;
+    margin-bottom: $spacing-sm;
+    color: $text-secondary;
+    font-weight: 500;
+    font-size: $font-size-base;
+  }
+}
+
+.select {
+  width: 100%;
+  padding: $spacing-md;
+  border-radius: $border-radius-base;
+  border: 1px solid $border-color;
+  background-color: $white;
+  font-size: $font-size-base;
+  color: $text-primary;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+  }
+
+  &:disabled {
+    background-color: $gray-100;
+    cursor: not-allowed;
+  }
+}
+
+.button {
+  width: 100%;
+  padding: $spacing-md;
+  background: linear-gradient(to right, $primary-color, $primary-light);
+  color: $white;
+  border: none;
+  border-radius: $border-radius-base;
+  cursor: pointer;
+  font-size: $font-size-base;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+
+  &:disabled {
+    background: $gray-500;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: $shadow-medium;
+  }
+}
+
+.loadingShimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba($white, 0.2),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
