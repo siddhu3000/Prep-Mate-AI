@@ -1,0 +1,13 @@
+@import './variables.scss' ;
+
+/* index.scss */
+body {
+  font-family: 'Roboto', sans-serif !important; // 👈 global font
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+}
+
+h1, h2, h3, .specialHeading {
+  font-family: 'Poppins', sans-serif;
+}
