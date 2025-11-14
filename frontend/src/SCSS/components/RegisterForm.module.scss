@@ -1,0 +1,196 @@
+@import '../variables.scss';
+
+.registerPage {
+  height: calc(100vh - 64px); 
+  background: linear-gradient(135deg, rgba($primary-color, 0.1) 0%, rgba($primary-light, 0.1) 100%);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.registerContainer {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.formCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 2.5rem;
+  
+  @media (max-width: 640px) {
+    padding: 2rem;
+  }
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.logoWrapper {
+  margin-bottom: 1.5rem;
+  
+  .logo {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: $text-secondary;
+  font-size: 1rem;
+}
+
+.alertSuccess {
+  background-color: $green-bg;
+  color: $green-text;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.alertError {
+  background-color: $red-bg;
+  color: $red-text;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  .label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $text-primary;
+    margin-bottom: 0.5rem;
+  }
+
+  .input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid $gray-300;
+    border-radius: 0.5rem;
+    background-color: $white;
+    color: $text-primary;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+}
+
+.submitButton {
+  background: linear-gradient(to right, $primary-color, $primary-light);
+  color: $white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba($primary-color, 0.2);
+  }
+
+  .buttonText {
+    flex: 1;
+    text-align: center;
+  }
+
+  .buttonIcon {
+    font-size: 1.25rem;
+  }
+}
+
+.formFooter {
+  margin-top: 2rem;
+  text-align: center;
+
+  .footerText {
+    color: $text-secondary;
+    font-size: 0.875rem;
+  }
+
+  .footerLink {
+    color: $primary-color;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primary-hover;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-height: 700px) {
+  .loginPage, .registerPage {
+    height: auto;
+    min-height: calc(100vh - 64px);
+    padding: 1rem;
+  }
+
+  .formCard {
+    padding: 1.5rem;
+  }
+
+  .logoWrapper {
+    margin-bottom: 1rem;
+    
+    .logo {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+  }
+
+  .inputGroup {
+    gap: 1rem;
+  }
+}

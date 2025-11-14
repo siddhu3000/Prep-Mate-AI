@@ -1,0 +1,143 @@
+@import '../variables.scss';
+
+.formContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.progressSection {
+  margin-bottom: 2rem;
+  text-align: center;
+
+  .progressText {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin-bottom: 0.5rem;
+  }
+
+  .progressBar {
+    width: 100%;
+    height: 4px;
+    background-color: $gray-100;
+    border-radius: 2px;
+    overflow: hidden;
+
+    .progressFill {
+      height: 100%;
+      background: linear-gradient(to right, $primary-color, $primary-light);
+      border-radius: 2px;
+      transition: width 0.3s ease-in-out;
+    }
+  }
+}
+
+.questionCard {
+  padding: 2rem;
+  background-color: $white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  .questionText {
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: $text-primary;
+
+    strong {
+      color: $primary-color;
+    }
+  }
+
+  .answerArea {
+    width: 100%;
+    border: 1px solid $gray-300;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical;
+    min-height: 200px;
+    color: $text-primary;
+    font-family: inherit;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+%baseButton {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.prevButton {
+  @extend %baseButton;
+  flex: 1;
+  background-color: $gray-600;
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background-color: $gray-600;
+  }
+}
+
+.nextButton {
+  @extend %baseButton;
+  flex: 2;
+  background: linear-gradient(to right, $primary-color, $primary-light);
+  color: $white;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba($primary-color, 0.2);
+  }
+
+  &.submitButton {
+    background: linear-gradient(to right, $green-text, darken($green-text, 10%));
+  }
+}
+
+.questionDots {
+  margin-top: 1.5rem;
+  text-align: center;
+
+  .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $gray-300;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &.active {
+      background-color: $primary-color;
+      transform: scale(1.2);
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import '../variables.scss';
+
+.header {
+    background: $white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    position: fixed;
+    width: 100%;
+    
+    .container {
+        padding: 1rem 1.5rem;
+    }
+    
+    .headerContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logoSection {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        .logoImage {
+            height: 3rem;
+            width: 3rem;
+            margin-right: 0.75rem;
+        }
+
+        .logoText {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $text-primary;
+        }
+    }
+
+    .navDesktop {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+
+        @media (min-width: 768px) {
+            display: flex;
+        }
+
+        .navLink {
+            color: $text-secondary;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+    }
+    
+    .authButton {
+        color: $text-primary;
+        font-weight: 600;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: border-radius 0.3s ease-in-out;
+        border: none;
+        font-size: 14px;
+        font-weight: 600;
+        &:hover {
+            border-radius: 25px;
+        }
+        &.loginButton {
+            // background-color: $teal-bg;
+        }
+        &.registerButton {
+            background-color: $primary-color;
+            color: $white;
+        }
+        &.logoutButton {
+            background-color: $red-bg;
+        }
+
+    }
+    .mobileMenuButton {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+
+        .materialIcons {
+            color: $text-primary;
+        }
+    }
+}
